@@ -12,4 +12,8 @@ export default defineConfig({
       },
     },
   },
+  preview: {
+    port: 3000,
+    allowedHosts: ['projeto-de-gestao-e-consulta.onrender.com'],
+  },
 });
