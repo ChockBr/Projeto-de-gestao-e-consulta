@@ -59,7 +59,7 @@ function PropertyListPage() {
   }, [query, type, minBedrooms, minPrice, maxPrice]);
 
   return (
-    <div className="page-container">
+    <div className="page-container home-page">
       <h1>Explorar Imóveis</h1>
 
       <div className="controls">

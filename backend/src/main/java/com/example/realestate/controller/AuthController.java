@@ -6,9 +6,9 @@ import com.example.realestate.entity.User;
 import com.example.realestate.security.JwtTokenProvider;
 import com.example.realestate.service.UserService;
 import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.annotation.*;
@@ -41,11 +41,14 @@ public class AuthController {
     public ResponseEntity<AuthResponse> login(@Valid @RequestBody AuthRequest request) {
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword()));
-            User user = userService.findByEmail(request.getEmail()).orElseThrow();
+            User user = userService.findByEmail(request.getEmail()).orElse(null);
+            if (user == null) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+            }
             String token = tokenProvider.createToken(user.getEmail(), user.getRoles().stream().map(Enum::name).collect(Collectors.toSet()));
             return ResponseEntity.ok(new AuthResponse(token));
         } catch (AuthenticationException ex) {
-            throw new BadCredentialsException("Credenciais inválidas");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
     }
 }

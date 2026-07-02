@@ -109,6 +109,22 @@ body, html, #root {
   min-height: calc(100vh - 80px);
 }
 
+.home-page {
+  position: relative;
+}
+
+.home-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #FF7A00, #FF9E2C);
+  clip-path: ellipse(80% 60% at 50% 0%);
+  z-index: -1;
+}
+
 h1 {
   margin: 0 0 24px;
   font-size: 28px;
@@ -533,6 +549,11 @@ label {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
+  .home-page::before {
+    opacity: 0.28;
+    clip-path: ellipse(100% 52% at 50% 0%);
+  }
+
   .property-list {
     grid-template-columns: 1fr;
   }
