@@ -17,7 +17,12 @@ type IconName =
   | 'checkCircle'
   | 'xCircle'
   | 'fileText'
-  | 'close';
+  | 'close'
+  | 'phone'
+  | 'globe'
+  | 'instagram'
+  | 'linkedin'
+  | 'download';
 
 interface IconProps {
   name: IconName;
@@ -185,6 +190,44 @@ function Icon({ name, size = 16, className = '' }: IconProps) {
         <svg {...common}>
           <path d="M18 6 6 18" />
           <path d="m6 6 12 12" />
+        </svg>
+      );
+    case 'phone':
+      return (
+        <svg {...common}>
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72l.35 2.79a2 2 0 0 1-.57 1.72L7.1 10.02a16 16 0 0 0 6.88 6.88l1.79-1.79a2 2 0 0 1 1.72-.57l2.79.35A2 2 0 0 1 22 16.92Z" />
+        </svg>
+      );
+    case 'globe':
+      return (
+        <svg {...common}>
+          <circle cx="12" cy="12" r="10" />
+          <path d="M2 12h20" />
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z" />
+        </svg>
+      );
+    case 'instagram':
+      return (
+        <svg {...common}>
+          <rect x="3" y="3" width="18" height="18" rx="5" />
+          <circle cx="12" cy="12" r="4" />
+          <circle cx="17.5" cy="6.5" r="1" />
+        </svg>
+      );
+    case 'linkedin':
+      return (
+        <svg {...common}>
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z" />
+          <rect x="2" y="9" width="4" height="12" />
+          <circle cx="4" cy="4" r="2" />
+        </svg>
+      );
+    case 'download':
+      return (
+        <svg {...common}>
+          <path d="M12 3v12" />
+          <path d="m7 10 5 5 5-5" />
+          <path d="M5 21h14" />
         </svg>
       );
     default:

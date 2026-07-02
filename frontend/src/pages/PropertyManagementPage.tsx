@@ -4,6 +4,7 @@ import type { PropertyResponse } from '../types';
 import { ApiError, authRequest } from '../utils/api';
 import { useAuth } from '../store/auth';
 import Icon from '../components/Icon';
+import SiteFooter from '../components/SiteFooter';
 
 interface PropertyFormState {
   title: string;
@@ -435,6 +436,8 @@ function PropertyManagementPage() {
           </table>
         )}
       </div>
+
+      <SiteFooter />
     </div>
   );
 }

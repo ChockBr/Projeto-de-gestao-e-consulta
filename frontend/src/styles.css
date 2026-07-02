@@ -3,6 +3,7 @@
   color: #1a1a1a;
   background: #f8f9fa;
   --primary: #FF4E00;
+  --home-accent: #9b2f00;
   --danger: #dc2626;
   --success: #059669;
   --warning: #f59e0b;
@@ -354,6 +355,73 @@ button:disabled {
   font-size: 13px;
 }
 
+.home-footer {
+  margin-top: 40px;
+  background: linear-gradient(135deg, #fff4ee, #ffe2d3);
+  border: 1px solid rgba(155, 47, 0, 0.14);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 18px 40px rgba(155, 47, 0, 0.08);
+}
+
+.home-footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 24px;
+}
+
+.home-footer-eyebrow {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--home-accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.home-footer-title {
+  margin: 0 0 12px;
+  color: var(--home-accent);
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.home-footer-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 12px;
+  color: var(--home-accent);
+  font-size: 15px;
+}
+
+.home-footer-text {
+  color: #6f4a3c;
+  font-size: 14px;
+  margin: 0;
+}
+
+.home-footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.home-footer-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #5f250a;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.home-footer-links a:hover {
+  color: var(--home-accent);
+  text-decoration: underline;
+}
+
 .property-link {
   text-decoration: none;
   color: inherit;
@@ -552,6 +620,19 @@ label {
   .home-page::before {
     opacity: 0.28;
     clip-path: ellipse(100% 52% at 50% 0%);
+  }
+
+  .home-footer {
+    padding: 22px;
+  }
+
+  .home-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .home-footer-title {
+    font-size: 22px;
   }
 
   .property-list {

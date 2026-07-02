@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../store/auth';
 import { ApiError, apiRequest } from '../utils/api';
 import Icon from '../components/Icon';
+import SiteFooter from '../components/SiteFooter';
 
 function LoginPage() {
   const [searchParams] = useSearchParams();
@@ -117,6 +118,8 @@ function LoginPage() {
             </tbody>
           </table>
         </div>
+
+        <SiteFooter />
       </div>
     </div>
   );

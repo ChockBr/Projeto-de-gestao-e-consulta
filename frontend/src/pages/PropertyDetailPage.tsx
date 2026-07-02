@@ -4,6 +4,7 @@ import type { PropertyResponse } from '../types';
 import { apiRequest } from '../utils/api';
 import { isGuestFavorite, toggleGuestFavorite } from '../utils/favorites';
 import Icon from '../components/Icon';
+import SiteFooter from '../components/SiteFooter';
 
 function PropertyDetailPage() {
   const { id } = useParams();
@@ -85,12 +86,14 @@ function PropertyDetailPage() {
   if (loading) return (
     <div className="page-container">
       <div className="loading"><div className="spinner"></div><p>Carregando...</p></div>
+      <SiteFooter />
     </div>
   );
 
   if (error) return (
     <div className="page-container">
       <div className="error">{error}</div>
+      <SiteFooter />
     </div>
   );
 
@@ -99,6 +102,7 @@ function PropertyDetailPage() {
       <div className="empty-state">
         <div className="empty-state-title">Imóvel não encontrado</div>
       </div>
+      <SiteFooter />
     </div>
   );
 
@@ -279,6 +283,8 @@ function PropertyDetailPage() {
           </div>
         </div>
       )}
+
+      <SiteFooter />
     </div>
   );
 }

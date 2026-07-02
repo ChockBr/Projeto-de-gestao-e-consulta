@@ -4,6 +4,7 @@ import type { PropertyResponse } from '../types';
 import { apiRequest } from '../utils/api';
 import { isGuestFavorite, toggleGuestFavorite } from '../utils/favorites';
 import Icon from '../components/Icon';
+import SiteFooter from '../components/SiteFooter';
 
 function PropertyListPage() {
   const [properties, setProperties] = useState<PropertyResponse[]>([]);
@@ -152,6 +153,8 @@ function PropertyListPage() {
           </li>
         ))}
       </ul>
+
+      <SiteFooter />
     </div>
   );
 }

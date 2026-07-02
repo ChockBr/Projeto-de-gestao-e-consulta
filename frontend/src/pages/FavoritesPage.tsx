@@ -4,6 +4,7 @@ import type { PropertyResponse } from '../types';
 import { apiRequest } from '../utils/api';
 import { getGuestFavoriteIds, removeGuestFavorite } from '../utils/favorites';
 import Icon from '../components/Icon';
+import SiteFooter from '../components/SiteFooter';
 
 function FavoritesPage() {
   const [favorites, setFavorites] = useState<PropertyResponse[]>([]);
@@ -90,6 +91,8 @@ function FavoritesPage() {
           </li>
         ))}
       </ul>
+
+      <SiteFooter />
     </div>
   );
 }

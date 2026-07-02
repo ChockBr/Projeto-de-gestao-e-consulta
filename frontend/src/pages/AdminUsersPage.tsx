@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { ApiError, authRequest } from '../utils/api';
 import { useAuth } from '../store/auth';
 import Icon from '../components/Icon';
+import SiteFooter from '../components/SiteFooter';
 
 function AdminUsersPage() {
   const { token, logout } = useAuth();
@@ -110,6 +111,8 @@ function AdminUsersPage() {
         {message && <p className="success">{message}</p>}
         {error && <p className="error">{error}</p>}
       </form>
+
+      <SiteFooter />
     </div>
   );
 }
