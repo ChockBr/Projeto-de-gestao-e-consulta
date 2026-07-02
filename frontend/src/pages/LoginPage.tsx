@@ -90,36 +90,6 @@ function LoginPage() {
 
           {error && <p className="error">{error}</p>}
         </form>
-
-        <div className="permission-section" style={{ marginTop: '32px' }}>
-          <h3><Icon name="clipboard" /> Contas de Teste Disponíveis:</h3>
-          <table className="table" style={{ marginTop: '16px' }}>
-            <thead>
-              <tr>
-                <th>E-mail</th>
-                <th>Senha</th>
-                <th>Perfil</th>
-                <th>Acesso</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>admin@example.com</td>
-                <td>password123</td>
-                <td><span className="badge-admin">Admin</span></td>
-                <td>Criar usuários, imóveis, tudo</td>
-              </tr>
-              <tr>
-                <td>agent@example.com</td>
-                <td>password123</td>
-                <td><span className="badge-agent">Corretor</span></td>
-                <td>Criar/editar seus imóveis</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <SiteFooter />
       </div>
     </div>
   );
